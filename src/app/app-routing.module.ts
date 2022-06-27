@@ -1,10 +1,21 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { RouterStateSnapshot, Routes, TitleStrategy } from '@angular/router';
 
-const routes: Routes = [];
+@Injectable()
+export class CustomTitleStrategy extends TitleStrategy {
+  constructor(private readonly title: Title) {
+    super();
+  }
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+  override updateTitle(routerState: RouterStateSnapshot): void {
+    const title = this.buildTitle(routerState);
+    if (title !== undefined) {
+      this.title.setTitle(`Portfolio - ${title}`);
+    } else {
+      this.title.setTitle(`Portfolio - Home`);
+    }
+  }
+}
+
+export const routes: Routes = [];

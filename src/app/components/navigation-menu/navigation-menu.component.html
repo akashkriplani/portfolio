@@ -1,0 +1,7 @@
+<nav>
+  <ul *ngFor="let navItems of navMenuItems; let i = index">
+    <li (click)="currentIndex = i">
+      <a [ngClass]="{ active: i === currentIndex }">{{ navItems }}</a>
+    </li>
+  </ul>
+</nav>
