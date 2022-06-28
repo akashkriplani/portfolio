@@ -35,6 +35,16 @@ footer {
   justify-content: center;
 }
 
+.zoom {
+  transition: transform 0.2s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
 ul {
   display: flex;
   margin: 0;
