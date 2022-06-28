@@ -2,6 +2,7 @@ p {
   letter-spacing: 1px;
   font-size: 14px;
   color: #333333;
+  margin: 10px;
 }
 
 .waves {
@@ -15,9 +16,15 @@ p {
 
 .content {
   position: relative;
-  height: 20vh;
+  height: 9vh;
   text-align: center;
   background-color: white;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-content {

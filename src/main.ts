@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,7 +13,11 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(RouterModule.forRoot(routes), BrowserAnimationsModule),
+    importProvidersFrom(
+      RouterModule.forRoot(routes),
+      BrowserAnimationsModule,
+      HttpClientModule
+    ),
     {
       provide: TitleStrategy,
       useClass: CustomTitleStrategy,

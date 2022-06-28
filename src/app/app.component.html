@@ -1,7 +1,12 @@
 <div class="header">
   <app-navigation-menu></app-navigation-menu>
-  <div class="inner-header flex">
-    <app-content></app-content>
-  </div>
+  <main>
+    <div class="inner-header">
+      <app-spinner *ngIf="loading; else showContentTemplate"></app-spinner>
+      <ng-template #showContentTemplate>
+        <app-content></app-content>
+      </ng-template>
+    </div>
+  </main>
   <app-footer></app-footer>
 </div>

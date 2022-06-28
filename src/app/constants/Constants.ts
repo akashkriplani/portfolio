@@ -1,4 +1,10 @@
-export const NavMenuItems = ['Home', 'About', 'Skills', 'Experience', 'Blog'];
+export const NavMenuItems = [
+  { title: 'Home', link: '/' },
+  { title: 'About', link: '/about' },
+  { title: 'Skills', link: '/skills' },
+  { title: 'Experience', link: '/experience' },
+  { title: 'Blog', link: '/blog-posts' },
+];
 
 export const SocialMediaProfiles = [
   {
@@ -37,3 +43,6 @@ export const SocialMediaProfiles = [
     iconPath: '../../../assets/images/stackoverflow.png',
   },
 ];
+
+export const MEDIUM_INTEGRATION_URL =
+  'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@akashkriplani';

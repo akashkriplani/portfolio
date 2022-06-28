@@ -1,7 +1,12 @@
 <nav>
-  <ul *ngFor="let navItems of navMenuItems; let i = index">
-    <li (click)="currentIndex = i">
-      <a [ngClass]="{ active: i === currentIndex }">{{ navItems }}</a>
+  <ul *ngFor="let navItems of navMenuItems">
+    <li>
+      <a
+        [routerLink]="navItems.link"
+        [routerLinkActive]="'active'"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >{{ navItems.title }}</a
+      >
     </li>
   </ul>
 </nav>
