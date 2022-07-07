@@ -2,27 +2,30 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  OnInit,
   Renderer2,
   ViewChild
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import Blast from 'blast-vanilla';
+import { TagCanvasModule, Tag } from 'ng-tagcanvas';
+import { TAGS, TAG_CANVAS_OPTIONS } from '../../constants';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TagCanvasModule],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit, AfterViewInit {
+export class AboutComponent implements AfterViewInit {
   @ViewChild('title') titlePieces!: ElementRef;
 
   constructor(private renderer: Renderer2) {}
 
-  ngOnInit(): void {}
+  tags: Tag[] = TAGS;
+
+  options: TagCanvasOptions = TAG_CANVAS_OPTIONS;
 
   ngAfterViewInit() {
     new Blast('h1', {

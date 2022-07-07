@@ -15,7 +15,7 @@
     .about-me {
       p {
         padding: 1rem 5rem;
-        font-size: 1.4rem;
+        font-size: 1rem;
         text-align: left;
       }
 
@@ -30,7 +30,11 @@
     }
   }
   .tag-canvas {
-    display: flex;
     flex: 1 0 0%;
   }
+}
+
+::ng-deep tag-canvas canvas {
+  padding-top: 20px;
+  min-height: 70vh;
 }
