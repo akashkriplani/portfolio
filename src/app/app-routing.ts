@@ -25,7 +25,7 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./components/home/home.component').then(
         ({ HomeComponent }) => HomeComponent
-      ),
+      )
   },
   {
     path: 'about',
@@ -33,7 +33,7 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./components/about/about.component').then(
         ({ AboutComponent }) => AboutComponent
-      ),
+      )
   },
   {
     path: 'skills',
@@ -41,7 +41,7 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./components/skills/skills.component').then(
         ({ SkillsComponent }) => SkillsComponent
-      ),
+      )
   },
   {
     path: 'experience',
@@ -49,7 +49,7 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./components/experience/experience.component').then(
         ({ ExperienceComponent }) => ExperienceComponent
-      ),
+      )
   },
   {
     path: 'blog-posts',
@@ -57,6 +57,6 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./components/medium-blog/medium-blog.component').then(
         ({ MediumBlogComponent }) => MediumBlogComponent
-      ),
-  },
+      )
+  }
 ];

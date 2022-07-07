@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {
   NavigationCancel,
   NavigationEnd,
@@ -6,13 +7,11 @@ import {
   NavigationStart,
   Router,
   RouterEvent,
-  RouterModule,
+  RouterModule
 } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
-import { ContentComponent } from './components/content/content.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -21,15 +20,13 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [
     RouterModule,
-    ContentComponent,
     FooterComponent,
     NavigationMenuComponent,
     SpinnerComponent,
-    CommonModule,
-  ],
+    CommonModule
+  ]
 })
 export class AppComponent implements OnInit {
-  title = 'portfolio-angular';
   loading = true;
 
   constructor(private router: Router) {}

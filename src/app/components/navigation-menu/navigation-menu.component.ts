@@ -10,7 +10,7 @@ import { ToggleNavMenuDirective } from '../../directives/toggle-nav-menu.directi
   standalone: true,
   imports: [CommonModule, RouterModule, ToggleNavMenuDirective],
   templateUrl: './navigation-menu.component.html',
-  styleUrls: ['./navigation-menu.component.scss'],
+  styleUrls: ['./navigation-menu.component.scss']
 })
 export class NavigationMenuComponent implements OnInit {
   navMenuItems: INavMenuItems[] = NavMenuItems;

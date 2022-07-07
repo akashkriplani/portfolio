@@ -6,7 +6,7 @@ import {
   OnDestroy,
   OnInit,
   Renderer2,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { DynamicScriptService } from '../../services/dynamic-script.service';
@@ -17,7 +17,7 @@ import Blast from 'blast-vanilla';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('title') titlePieces!: ElementRef;
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       customClass: '',
       aria: true,
       debug: false,
-      name: 'blast',
+      name: 'blast'
     });
 
     let elements: HTMLCollection = this.titlePieces.nativeElement.children;

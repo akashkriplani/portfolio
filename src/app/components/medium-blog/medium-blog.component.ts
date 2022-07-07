@@ -10,7 +10,7 @@ import { NodeToTextPipe } from '../../pipes/node-to-text.pipe';
   standalone: true,
   imports: [CommonModule, ShortenPipe, NodeToTextPipe],
   templateUrl: './medium-blog.component.html',
-  styleUrls: ['./medium-blog.component.scss'],
+  styleUrls: ['./medium-blog.component.scss']
 })
 export class MediumBlogComponent implements OnInit {
   posts!: IMediumBlogPostsResponse;

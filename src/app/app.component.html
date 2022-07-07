@@ -4,7 +4,7 @@
     <div class="inner-header">
       <app-spinner *ngIf="loading; else showContentTemplate"></app-spinner>
       <ng-template #showContentTemplate>
-        <app-content></app-content>
+        <router-outlet></router-outlet>
       </ng-template>
     </div>
   </main>

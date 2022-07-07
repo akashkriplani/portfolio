@@ -8,7 +8,7 @@ import { ISocialMediaLinks } from '../../interfaces';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
+  styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
   public currentYear!: number;

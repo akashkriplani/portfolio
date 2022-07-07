@@ -3,12 +3,12 @@ import {
   ElementRef,
   HostListener,
   Input,
-  Renderer2,
+  Renderer2
 } from '@angular/core';
 
 @Directive({
   selector: '[appToggleNavMenu]',
-  standalone: true,
+  standalone: true
 })
 export class ToggleNavMenuDirective {
   @Input('customClassName') className!: string;
