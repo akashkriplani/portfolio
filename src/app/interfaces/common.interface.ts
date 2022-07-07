@@ -24,3 +24,8 @@ export interface IPostItems {
   thumbnail: string;
   title: string;
 }
+
+export interface IDynamicScripts {
+  name: string;
+  src: string;
+}

@@ -1,4 +1,14 @@
-export const NavMenuItems = [
+import {
+  IDynamicScripts,
+  INavMenuItems,
+  ISocialMediaLinks,
+} from '../interfaces';
+
+export const ScriptStore: IDynamicScripts[] = [
+  { name: 'oscillator', src: './assets/js/oscillator.js' },
+];
+
+export const NavMenuItems: INavMenuItems[] = [
   { title: 'Home', link: '/' },
   { title: 'About', link: '/about' },
   { title: 'Skills', link: '/skills' },
@@ -6,7 +16,7 @@ export const NavMenuItems = [
   { title: 'Blog', link: '/blog-posts' },
 ];
 
-export const SocialMediaProfiles = [
+export const SocialMediaProfiles: ISocialMediaLinks[] = [
   {
     title: 'Facebook',
     profileUrl: 'https://www.facebook.com/akashkriplani25',
@@ -44,5 +54,5 @@ export const SocialMediaProfiles = [
   },
 ];
 
-export const MEDIUM_INTEGRATION_URL =
+export const MEDIUM_INTEGRATION_URL: string =
   'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@akashkriplani';
