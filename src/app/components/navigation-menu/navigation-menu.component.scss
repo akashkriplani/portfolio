@@ -91,12 +91,6 @@ a.active {
       display: block;
       float: left;
       line-height: 40px;
-      transition: all 0.15s;
-    }
-    a:hover {
-      -ms-transform: scale(1.25);
-      -webkit-transform: scale(1.25);
-      transform: scale(1.25);
     }
   }
 }
