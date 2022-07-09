@@ -1,13 +1,16 @@
 import {
   IDynamicScripts,
   INavMenuItems,
-  ISocialMediaLinks
+  ISocialMediaLinks,
+  ISkills
 } from '../interfaces';
 
 import { Tag } from 'ng-tagcanvas';
 
 export const ScriptStore: IDynamicScripts[] = [
-  { name: 'oscillator', src: './assets/js/oscillator.js' }
+  { name: 'oscillator', src: './assets/js/oscillator.js' },
+  { name: 'jquery', src: './assets/js/jquery.js' },
+  { name: 'skills', src: './assets/js/skills.js' }
 ];
 
 export const NavMenuItems: INavMenuItems[] = [
@@ -17,6 +20,42 @@ export const NavMenuItems: INavMenuItems[] = [
   { title: 'Experience', link: '/experience' },
   { title: 'Blog', link: '/blog-posts' }
 ];
+
+export const SKILLS: ISkills = {
+  techSkills: [
+    'HTML',
+    'CSS / SCSS',
+    'JavaScript',
+    'TypeScript',
+    'Angular',
+    'NgRx',
+    'GraphQL',
+    'Git',
+    'Bitbucket'
+  ],
+  mgmtSkills: [
+    'Understanding UX',
+    'Strategic Planning',
+    'Developing front-end architecture',
+    'Innovative Approach',
+    'Code Reviewing',
+    'Critical Thinking',
+    'Mentoring',
+    'Teamwork and Delegation',
+    'Coordinating'
+  ],
+  softSkills: [
+    'Leadership',
+    'Teamwork',
+    'Work Ethic',
+    'Problem Solving',
+    'Public Speaking',
+    'Professional Writing',
+    'Punctuality',
+    'Digital Literacy',
+    'Intercultural Fluency'
+  ]
+};
 
 export const SocialMediaProfiles: ISocialMediaLinks[] = [
   {

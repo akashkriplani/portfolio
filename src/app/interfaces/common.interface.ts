@@ -3,6 +3,12 @@ export interface INavMenuItems {
   link: string;
 }
 
+export interface ISkills {
+  techSkills: string[];
+  mgmtSkills: string[];
+  softSkills: string[];
+}
+
 export interface ISocialMediaLinks {
   title: string;
   profileUrl: string;
