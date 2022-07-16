@@ -43,7 +43,7 @@ function initOscillator(remove) {
 
         value: function () {
           return value;
-        },
+        }
       };
     })();
 
@@ -130,7 +130,7 @@ function initOscillator(remove) {
           ctx.quadraticCurveTo(a.x, a.y, b.x, b.y);
           ctx.stroke();
           ctx.closePath();
-        },
+        }
       };
     })();
 
@@ -155,7 +155,7 @@ function initOscillator(remove) {
       for (var i = 0; i < settings.trails; i++) {
         tendrils.push(
           new Tendril({
-            spring: 0.45 + 0.025 * (i / settings.trails),
+            spring: 0.45 + 0.025 * (i / settings.trails)
           })
         );
       }
@@ -182,11 +182,11 @@ function initOscillator(remove) {
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
       ctx.globalCompositeOperation = "lighter";
-      ctx.strokeStyle = "hsla(346,98%,56%,0.25)";
+      ctx.strokeStyle = "hsla(364,100%,50%,0.5)";
       ctx.lineWidth = 1;
 
       if (color == 1) {
-        ctx.strokeStyle = "hsla(346,98%,56%,0.25)";
+        ctx.strokeStyle = "hsla(364,100%,50%,0.5)";
       } else {
         ctx.strokeStyle = "hsla(171,98%,56%,0.25)";
       }
@@ -316,7 +316,7 @@ function initOscillator(remove) {
       phase: Math.random() * Math.TWO_PI,
       amplitude: 85,
       frequency: 0.0015,
-      offset: 285,
+      offset: 285
     });
 
     document.addEventListener("mousemove", init);
