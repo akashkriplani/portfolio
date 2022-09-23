@@ -2,7 +2,9 @@ import {
   IDynamicScripts,
   INavMenuItems,
   ISocialMediaLinks,
-  ISkills
+  ISkills,
+  IExperience,
+  INewExperience
 } from '../interfaces';
 
 import { Tag } from 'ng-tagcanvas';
@@ -133,6 +135,72 @@ export const TAG_CANVAS_OPTIONS: TagCanvasOptions = {
   weight: true,
   reverse: true
 };
+
+export const NEW_EXPERIENCES: INewExperience[] = [
+  {
+    accentColor: '#41516c',
+    date: '2022',
+    title: 'Staff Engineer, Nagarro',
+    description: `Working as a senior front end Angular developer for a South African Bank`
+  },
+  {
+    accentColor: '#fbca3e',
+    date: '2021',
+    title: 'Tech Lead, Fiserv',
+    description: `Worked as an Angular developer on a in-house banking product`
+  },
+  {
+    accentColor: '#e24a68',
+    date: '2019',
+    title: 'Senior Associate L1, Publicis Sapient',
+    description: `Worked as an Angular developer for a US telecommunications client`
+  },
+  {
+    accentColor: '#1b5f8c',
+    date: '2018',
+    title: 'Senior Associate, Nagarro',
+    description: `Worked as an Angular developer for a South African Bank which is responsible for Wealth Management of its rich and wealthy customers`
+  },
+  {
+    accentColor: '#4cadad',
+    date: '2014',
+    title: 'Programmer Analyst, Cognizant',
+    description: `Worked as a UI developer for in-house retailmate solutions team`
+  }
+];
+
+export const EXPERIENCES: IExperience[] = [
+  {
+    company: 'Nagarro',
+    designation: 'Staff Engineer',
+    yearRange: '2022 - Present',
+    role: 'Working as a senior front end Angular developer'
+  },
+  {
+    company: 'Fiserv',
+    designation: 'Tech Lead',
+    yearRange: '2021 - 2022',
+    role: 'Worked as a senior front end Angular developer'
+  },
+  {
+    company: 'Publicis Sapient',
+    designation: 'Senior Associate L1',
+    yearRange: '2019 - 2021',
+    role: 'Worked as a senior front end Angular developer'
+  },
+  {
+    company: 'Nagarro',
+    designation: 'Senior Associate',
+    yearRange: '2018 - 2019',
+    role: 'Worked as a front end Angular developer'
+  },
+  {
+    company: 'Cognizant',
+    designation: 'Programmer Analyst',
+    yearRange: '2014 - 2017',
+    role: 'Worked as a front end Angular developer'
+  }
+];
 
 export const MEDIUM_INTEGRATION_URL: string =
   'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@akashkriplani';

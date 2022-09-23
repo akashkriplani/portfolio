@@ -35,3 +35,17 @@ export interface IDynamicScripts {
   name: string;
   src: string;
 }
+
+export interface IExperience {
+  company: string;
+  designation: string;
+  yearRange: string;
+  role: string;
+}
+
+export interface INewExperience {
+  accentColor: string;
+  date: string;
+  title: string;
+  description: string;
+}
