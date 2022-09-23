@@ -18,7 +18,7 @@ export class CustomTitleStrategy extends TitleStrategy {
   }
 }
 
-export const routes: Routes = [
+export const APP_ROUTES: Routes = [
   {
     path: '',
     title: 'Home',

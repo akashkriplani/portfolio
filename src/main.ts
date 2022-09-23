@@ -3,7 +3,7 @@ import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, TitleStrategy } from '@angular/router';
-import { CustomTitleStrategy, routes } from './app/app-routing';
+import { CustomTitleStrategy, APP_ROUTES } from './app/app-routing';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 
@@ -14,13 +14,13 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(
-      RouterModule.forRoot(routes),
+      RouterModule.forRoot(APP_ROUTES),
       BrowserAnimationsModule,
       HttpClientModule
     ),
     {
       provide: TitleStrategy,
-      useClass: CustomTitleStrategy,
-    },
-  ],
+      useClass: CustomTitleStrategy
+    }
+  ]
 }).catch((err) => console.error(err));
