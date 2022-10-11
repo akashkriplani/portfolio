@@ -10,6 +10,7 @@ import {
   RouterModule
 } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
+import { LangDropdownComponent } from './components/lang-dropdown/lang-dropdown.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 
@@ -22,6 +23,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     RouterModule,
     FooterComponent,
     NavigationMenuComponent,
+    LangDropdownComponent,
     SpinnerComponent,
     CommonModule
   ]
