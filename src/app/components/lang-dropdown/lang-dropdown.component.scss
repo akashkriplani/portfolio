@@ -1,14 +1,14 @@
 .globe-icon {
-  position: absolute;
+  position: relative;
   left: 0;
   margin-left: 20px;
   padding-top: 40px;
-  z-index: 3;
+  z-index: 1;
 }
 
 .lang-dropdown {
-  position: relative;
-  z-index: 2;
+  width: 90px;
+  height: 90px;
   border: 0;
   outline: 0;
 }
