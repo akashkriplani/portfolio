@@ -72,7 +72,7 @@ export const SocialMediaProfiles: ISocialMediaLinks[] = [
   },
   {
     title: 'Instagram',
-    profileUrl: 'https://www.instagram.com/kripstagram25',
+    profileUrl: 'https://www.instagram.com/kripstagram',
     iconPath: '../../../assets/images/instagram.png'
   },
   {
