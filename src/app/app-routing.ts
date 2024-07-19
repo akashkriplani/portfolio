@@ -47,8 +47,8 @@ export const APP_ROUTES: Routes = [
     path: 'experience',
     title: 'Experience',
     loadComponent: () =>
-      import('./components/experience-new/experience-new.component').then(
-        ({ ExperienceNewComponent }) => ExperienceNewComponent
+      import('./components/experience/experience.component').then(
+        ({ ExperienceComponent }) => ExperienceComponent
       )
   },
   {
