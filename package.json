@@ -1,6 +1,6 @@
 {
   "name": "portfolio-angular",
-  "homepage": "https://akashkriplani.github.io/portfolio",
+  "homepage": "https://akashkriplani.github.io/portfolio-angular",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
