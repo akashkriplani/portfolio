@@ -58,5 +58,9 @@ export const APP_ROUTES: Routes = [
       import('./components/medium-blog/medium-blog.component').then(
         ({ MediumBlogComponent }) => MediumBlogComponent
       )
+  },
+  {
+    path: '**',
+    redirectTo: '/home'
   }
 ];
