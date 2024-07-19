@@ -16,7 +16,7 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(
-      RouterModule.forRoot(APP_ROUTES),
+      RouterModule.forRoot(APP_ROUTES, { useHash: true }),
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
