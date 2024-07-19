@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import Blast from 'blast-vanilla';
 import { TagCanvasModule, Tag } from 'ng-tagcanvas';
-import { TAGS, TAG_CANVAS_OPTIONS } from '../../constants';
+import { SocialMediaProfiles, TAGS, TAG_CANVAS_OPTIONS } from '../../constants';
 
 @Component({
   selector: 'app-about',
@@ -22,6 +22,10 @@ export class AboutComponent implements AfterViewInit {
   @ViewChild('title') titlePieces!: ElementRef;
 
   constructor(private renderer: Renderer2) {}
+
+  linkedin = SocialMediaProfiles.filter(
+    (x) => x.title.toLowerCase().trim() == 'linkedin'
+  )[0];
 
   tags: Tag[] = TAGS;
 
