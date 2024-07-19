@@ -7,6 +7,7 @@ import {
   ViewChild
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { take } from 'rxjs';
 import Blast from 'blast-vanilla';
 import { PostsService } from '../../services/posts.service';
 import { IMediumBlogPostsResponse } from '../../interfaces';
@@ -30,9 +31,12 @@ export class MediumBlogComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    this.postsService.getPosts().subscribe((data: IMediumBlogPostsResponse) => {
-      this.posts = data;
-    });
+    this.postsService
+      .getPosts()
+      .pipe(take(1))
+      .subscribe((data: IMediumBlogPostsResponse) => {
+        this.posts = data;
+      });
   }
 
   ngAfterViewInit() {

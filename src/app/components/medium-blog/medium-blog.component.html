@@ -11,13 +11,13 @@
             >
               <div class="inner">
                 <p>{{ post.title }}</p>
-                <span>{{ post.pubDate | date: "longDate" }}</span>
+                <span>{{ post.pubDate | date : "longDate" }}</span>
               </div>
             </div>
             <div class="back">
               <div class="inner">
                 <p>
-                  {{ post.content | nodeToText | shorten: 60:250 }}
+                  {{ post.content | nodeToText | shorten : 60 : 250 }}
                 </p>
               </div>
             </div>
