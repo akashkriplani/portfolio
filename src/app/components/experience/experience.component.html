@@ -1,10 +1,13 @@
 <section class="timeline">
+  <header class="header">
+    <h1 #title>Work History</h1>
+  </header>
   <ul>
     <li *ngFor="let e of experience" appTimeline customClassName="in-view">
       <div>
         <time>{{ e.yearRange }}</time>
         <div class="discovery">
-          <h1>{{ e.company }}</h1>
+          <h2>{{ e.company }}</h2>
           <p>{{ e.designation }}</p>
           <span>{{ e.role }}</span>
         </div>

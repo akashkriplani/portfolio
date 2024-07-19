@@ -2,6 +2,19 @@ $primary-color: rgba(255, 255, 255, 0.1);
 
 // STYLING
 .timeline {
+  .header {
+    text-align: center;
+
+    width: 100%;
+    top: 5%;
+  }
+
+  .header h1 {
+    margin: 0;
+    font-size: 4rem;
+    padding: 5px 0;
+  }
+
   ul {
     li {
       list-style-type: none;
