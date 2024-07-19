@@ -63,37 +63,37 @@ export const SocialMediaProfiles: ISocialMediaLinks[] = [
   {
     title: 'Facebook',
     profileUrl: 'https://www.facebook.com/akashkriplani25',
-    iconPath: '../../../assets/images/facebook.png'
+    iconPath: 'assets/images/facebook.png'
   },
   {
     title: 'Twitter',
     profileUrl: 'https://twitter.com/kriptweets',
-    iconPath: '../../../assets/images/twitter.png'
+    iconPath: 'assets/images/twitter.png'
   },
   {
     title: 'Instagram',
     profileUrl: 'https://www.instagram.com/kripstagram',
-    iconPath: '../../../assets/images/instagram.png'
+    iconPath: 'assets/images/instagram.png'
   },
   {
     title: 'LinkedIn',
     profileUrl: 'https://www.linkedin.com/in/akashkriplani25',
-    iconPath: '../../../assets/images/linkedin.png'
+    iconPath: 'assets/images/linkedin.png'
   },
   {
     title: 'GitHub',
     profileUrl: 'https://github.com/akashkriplani',
-    iconPath: '../../../assets/images/github.png'
+    iconPath: 'assets/images/github.png'
   },
   {
     title: 'Medium',
     profileUrl: 'https://akashkriplani.medium.com',
-    iconPath: '../../../assets/images/medium.png'
+    iconPath: 'assets/images/medium.png'
   },
   {
     title: 'Stack Overflow',
     profileUrl: 'https://stackoverflow.com/users/4152622/akash-kriplani',
-    iconPath: '../../../assets/images/stackoverflow.png'
+    iconPath: 'assets/images/stackoverflow.png'
   }
 ];
 

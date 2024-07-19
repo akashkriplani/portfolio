@@ -5,9 +5,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href https://akashkriplani.github.io/portfolio-angular/",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist/portfolio-angular",
     "compodoc": "npx compodoc -p tsconfig.doc.json -w -s --hideGenerator",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
