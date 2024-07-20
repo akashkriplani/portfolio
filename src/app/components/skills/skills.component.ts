@@ -35,17 +35,18 @@ export class SkillsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.yearsOfExperience = new Date().getFullYear() - this.startingYear;
-    this.dsService
-      .load('jquery')
-      .then(() => {
-        this.dsService.load('skills').then(() => {
-          this.loadMakisus();
-        });
-      })
-      .catch((err) => {
-        console.error('error loading scripts', err);
-      });
+    this.executePromises();
   }
+
+  executePromises = async () => {
+    try {
+      await this.dsService.load('jquery');
+      await this.dsService.load('skills');
+      this.loadMakisus();
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   toggleExperience() {
     this.isMakisuOpen = !this.isMakisuOpen;
