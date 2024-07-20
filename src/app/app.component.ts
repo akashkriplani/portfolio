@@ -10,6 +10,7 @@ import {
   RouterOutlet
 } from '@angular/router';
 import { DynamicScriptService } from './services/dynamic-script.service';
+import { FontService } from './services/font.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
@@ -31,6 +32,7 @@ export class AppComponent implements OnInit {
   loading = true;
 
   private dsService = inject(DynamicScriptService);
+  private fontService = inject(FontService);
   private router = inject(Router);
 
   ngOnInit(): void {
@@ -38,6 +40,7 @@ export class AppComponent implements OnInit {
       this.navigationInterceptor(event as RouterEvent);
     });
 
+    this.fontService.loadFonts();
     this.loadScripts();
   }
 

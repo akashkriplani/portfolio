@@ -10,6 +10,11 @@ import {
 
 import { TagCanvasOptions } from 'ng-tagcanvas';
 
+export const FONT_URLS = [
+  'https://fonts.googleapis.com/css?family=Lato:300,400',
+  'https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap'
+];
+
 export const ScriptStore: IDynamicScripts[] = [
   { name: 'oscillator', src: './assets/js/oscillator.js' },
   { name: 'jquery', src: './assets/js/jquery.js' },
