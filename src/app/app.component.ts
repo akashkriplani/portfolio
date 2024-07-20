@@ -12,6 +12,7 @@ import {
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { DynamicScriptService } from './services/dynamic-script.service';
 
 @Component({
   selector: 'app-root',
@@ -29,13 +30,27 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 export class AppComponent implements OnInit {
   loading = true;
 
-  constructor(private router: Router) {}
+  constructor(
+    private dsService: DynamicScriptService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       this.navigationInterceptor(event as RouterEvent);
     });
+
+    this.loadScripts();
   }
+
+  loadScripts = async () => {
+    try {
+      await this.dsService.load('jquery');
+      await this.dsService.load('skills');
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   navigationInterceptor(event: RouterEvent): void {
     if (event instanceof NavigationStart) {

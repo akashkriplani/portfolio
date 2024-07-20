@@ -9,7 +9,6 @@ import {
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import Blast from 'blast-vanilla';
-import { DynamicScriptService } from '../../services/dynamic-script.service';
 import { ISkills } from '../../interfaces';
 import { SKILLS } from '../../constants';
 
@@ -21,10 +20,7 @@ import { SKILLS } from '../../constants';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit, AfterViewInit {
-  constructor(
-    private dsService: DynamicScriptService,
-    private renderer: Renderer2
-  ) {}
+  constructor(private renderer: Renderer2) {}
 
   @ViewChild('title') titlePieces!: ElementRef;
   @ViewChild('experience') experience!: ElementRef;
@@ -35,18 +31,7 @@ export class SkillsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.yearsOfExperience = new Date().getFullYear() - this.startingYear;
-    this.executePromises();
   }
-
-  executePromises = async () => {
-    try {
-      await this.dsService.load('jquery');
-      await this.dsService.load('skills');
-      this.loadMakisus();
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   toggleExperience() {
     this.isMakisuOpen = !this.isMakisuOpen;
@@ -101,6 +86,8 @@ export class SkillsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    this.loadMakisus();
+
     new Blast('h1', {
       returnGenerated: true,
       delimiter: 'character',
