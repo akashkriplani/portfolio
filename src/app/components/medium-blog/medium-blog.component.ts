@@ -4,9 +4,10 @@ import {
   AfterViewInit,
   ElementRef,
   Renderer2,
-  ViewChild
+  ViewChild,
+  inject
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { DatePipe, NgFor, NgStyle } from '@angular/common';
 import { take } from 'rxjs';
 import Blast from 'blast-vanilla';
 import { PostsService } from '../../services/posts.service';
@@ -17,7 +18,7 @@ import { NodeToTextPipe } from '../../pipes/node-to-text.pipe';
 @Component({
   selector: 'app-medium-blog',
   standalone: true,
-  imports: [CommonModule, ShortenPipe, NodeToTextPipe],
+  imports: [DatePipe, NgFor, NgStyle, ShortenPipe, NodeToTextPipe],
   templateUrl: './medium-blog.component.html',
   styleUrls: ['./medium-blog.component.scss']
 })
@@ -25,12 +26,14 @@ export class MediumBlogComponent implements OnInit, AfterViewInit {
   @ViewChild('title') titlePieces!: ElementRef;
   posts!: IMediumBlogPostsResponse;
 
-  constructor(
-    private postsService: PostsService,
-    private renderer: Renderer2
-  ) {}
+  private postsService = inject(PostsService);
+  private renderer = inject(Renderer2);
 
   ngOnInit(): void {
+    this.fetchPosts();
+  }
+
+  fetchPosts(): void {
     this.postsService
       .getPosts()
       .pipe(take(1))

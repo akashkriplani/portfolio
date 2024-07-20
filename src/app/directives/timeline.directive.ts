@@ -4,7 +4,8 @@ import {
   HostListener,
   Input,
   Renderer2,
-  OnInit
+  OnInit,
+  inject
 } from '@angular/core';
 
 @Directive({
@@ -14,7 +15,8 @@ import {
 export class TimelineDirective implements OnInit {
   @Input('customClassName') className!: string;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
+  private elementRef = inject(ElementRef);
+  private renderer = inject(Renderer2);
 
   @HostListener('window:scroll') onScroll() {
     this.toggleView();

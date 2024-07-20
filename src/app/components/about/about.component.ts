@@ -2,11 +2,11 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  inject,
   Renderer2,
   ViewChild
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgFor } from '@angular/common';
 import Blast from 'blast-vanilla';
 import { TagCanvasModule, TagCanvasOptions } from 'ng-tagcanvas';
 import { SocialMediaProfiles, TAGS, TAG_CANVAS_OPTIONS } from '../../constants';
@@ -15,22 +15,21 @@ import { ITag } from '../../interfaces';
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, RouterModule, TagCanvasModule],
+  imports: [NgFor, TagCanvasModule],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements AfterViewInit {
   @ViewChild('title') titlePieces!: ElementRef;
 
-  constructor(private renderer: Renderer2) {}
-
   linkedin = SocialMediaProfiles.filter(
     (x) => x.title.toLowerCase().trim() == 'linkedin'
   )[0];
 
+  options: TagCanvasOptions = TAG_CANVAS_OPTIONS;
   tags: ITag[] = TAGS;
 
-  options: TagCanvasOptions = TAG_CANVAS_OPTIONS;
+  private renderer = inject(Renderer2);
 
   ngAfterViewInit() {
     new Blast('h1', {

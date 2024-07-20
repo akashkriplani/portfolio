@@ -31,10 +31,10 @@ export const SKILLS: ISkills = {
     'JavaScript',
     'TypeScript',
     'Angular',
+    'React',
     'NgRx',
     'GraphQL',
-    'Git',
-    'Bitbucket'
+    'Git / Bitbucket'
   ],
   mgmtSkills: [
     'Understanding UX',

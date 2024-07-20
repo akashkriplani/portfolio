@@ -4,10 +4,11 @@ import {
   Component,
   ElementRef,
   Renderer2,
-  ViewChild
+  ViewChild,
+  inject
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import Blast from 'blast-vanilla';
 import { ISkills } from '../../interfaces';
 import { SKILLS } from '../../constants';
@@ -15,19 +16,19 @@ import { SKILLS } from '../../constants';
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [NgFor, RouterLink],
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit, AfterViewInit {
-  constructor(private renderer: Renderer2) {}
-
   @ViewChild('title') titlePieces!: ElementRef;
   @ViewChild('experience') experience!: ElementRef;
   isMakisuOpen: boolean = true;
   startingYear: number = 2014;
   yearsOfExperience!: number;
   skills: ISkills = SKILLS;
+
+  private renderer = inject(Renderer2);
 
   ngOnInit(): void {
     this.yearsOfExperience = new Date().getFullYear() - this.startingYear;

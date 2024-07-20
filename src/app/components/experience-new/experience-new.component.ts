@@ -1,11 +1,13 @@
 import {
+  AfterViewInit,
   Component,
   ElementRef,
+  inject,
   OnInit,
   Renderer2,
   ViewChild
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgFor } from '@angular/common';
 import Blast from 'blast-vanilla';
 import { NEW_EXPERIENCES } from '../../constants';
 import { INewExperience } from '../../interfaces';
@@ -13,15 +15,15 @@ import { INewExperience } from '../../interfaces';
 @Component({
   selector: 'app-experience-new',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgFor],
   templateUrl: './experience-new.component.html',
   styleUrls: ['./experience-new.component.scss']
 })
-export class ExperienceNewComponent implements OnInit {
+export class ExperienceNewComponent implements OnInit, AfterViewInit {
   @ViewChild('title') titlePieces!: ElementRef;
   experiences!: INewExperience[];
 
-  constructor(private renderer: Renderer2) {}
+  private renderer = inject(Renderer2);
 
   ngOnInit(): void {
     this.experiences = NEW_EXPERIENCES;

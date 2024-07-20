@@ -2,20 +2,19 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  Inject,
+  inject,
   OnDestroy,
   OnInit,
   Renderer2,
   ViewChild
 } from '@angular/core';
-import { CommonModule, DOCUMENT } from '@angular/common';
+import { DOCUMENT } from '@angular/common';
 import { DynamicScriptService } from '../../services/dynamic-script.service';
 import Blast from 'blast-vanilla';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
@@ -23,11 +22,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('title') titlePieces!: ElementRef;
   screenWidth!: number;
 
-  constructor(
-    private dsService: DynamicScriptService,
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document
-  ) {}
+  private document: Document = inject(DOCUMENT);
+  private dsService = inject(DynamicScriptService);
+  private renderer = inject(Renderer2);
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;

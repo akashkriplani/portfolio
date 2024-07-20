@@ -1,12 +1,12 @@
 <div class="header">
-  <app-navigation-menu></app-navigation-menu>
+  <app-navigation-menu />
   <main>
     <div class="inner-header">
-      <app-spinner *ngIf="loading; else showContentTemplate"></app-spinner>
+      <app-spinner *ngIf="loading; else showContentTemplate" />
       <ng-template #showContentTemplate>
-        <router-outlet></router-outlet>
+        <router-outlet />
       </ng-template>
     </div>
   </main>
-  <app-footer></app-footer>
+  <app-footer />
 </div>

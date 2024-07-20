@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
+import { NgIf } from '@angular/common';
 import {
   NavigationCancel,
   NavigationEnd,
@@ -7,12 +7,12 @@ import {
   NavigationStart,
   Router,
   RouterEvent,
-  RouterModule
+  RouterOutlet
 } from '@angular/router';
+import { DynamicScriptService } from './services/dynamic-script.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { DynamicScriptService } from './services/dynamic-script.service';
 
 @Component({
   selector: 'app-root',
@@ -20,20 +20,18 @@ import { DynamicScriptService } from './services/dynamic-script.service';
   styleUrls: ['./app.component.scss'],
   standalone: true,
   imports: [
-    RouterModule,
     FooterComponent,
+    RouterOutlet,
+    NgIf,
     NavigationMenuComponent,
-    SpinnerComponent,
-    CommonModule
+    SpinnerComponent
   ]
 })
 export class AppComponent implements OnInit {
   loading = true;
 
-  constructor(
-    private dsService: DynamicScriptService,
-    private router: Router
-  ) {}
+  private dsService = inject(DynamicScriptService);
+  private router = inject(Router);
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
@@ -43,7 +41,7 @@ export class AppComponent implements OnInit {
     this.loadScripts();
   }
 
-  loadScripts = async () => {
+  loadScripts = async (): Promise<void> => {
     try {
       await this.dsService.load('jquery');
       await this.dsService.load('skills');

@@ -1,5 +1,12 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  inject,
+  Renderer2,
+  ViewChild
+} from '@angular/core';
+import { NgFor } from '@angular/common';
 import Blast from 'blast-vanilla';
 import { TimelineDirective } from '../../directives/timeline.directive';
 import { EXPERIENCES } from '../../constants';
@@ -8,15 +15,15 @@ import { IExperience } from '../../interfaces';
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [CommonModule, TimelineDirective],
+  imports: [NgFor, TimelineDirective],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })
-export class ExperienceComponent {
-  constructor(private renderer: Renderer2) {}
-
-  experience: IExperience[] = EXPERIENCES;
+export class ExperienceComponent implements AfterViewInit {
   @ViewChild('title') titlePieces!: ElementRef;
+  experience: IExperience[] = EXPERIENCES;
+
+  private renderer = inject(Renderer2);
 
   ngAfterViewInit() {
     new Blast('h1', {

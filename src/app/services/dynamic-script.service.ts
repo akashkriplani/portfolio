@@ -11,7 +11,7 @@ export class DynamicScriptService {
     ScriptStore.forEach((script: any) => {
       this.scripts[script.name] = {
         loaded: false,
-        src: script.src,
+        src: script.src
       };
     });
   }
