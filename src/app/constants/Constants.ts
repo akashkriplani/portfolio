@@ -4,10 +4,11 @@ import {
   ISocialMediaLinks,
   ISkills,
   IExperience,
-  INewExperience
+  INewExperience,
+  ITag
 } from '../interfaces';
 
-import { Tag } from 'ng-tagcanvas';
+import { TagCanvasOptions } from 'ng-tagcanvas';
 
 export const ScriptStore: IDynamicScripts[] = [
   { name: 'oscillator', src: './assets/js/oscillator.js' },
@@ -97,21 +98,21 @@ export const SocialMediaProfiles: ISocialMediaLinks[] = [
   }
 ];
 
-export const TAGS: Tag[] = [
+export const TAGS: ITag[] = [
   { weight: 22, text: 'Git' },
   { weight: 24, text: 'JavaScript' },
   { weight: 24, text: 'NgRx' },
   { weight: 20, text: 'Bootstrap' },
   { weight: 32, text: 'Angular' },
   { weight: 30, text: 'TypeScript' },
-  { weight: 18, text: 'npm' },
+  { weight: 25, text: 'TailwindCSS' },
   { weight: 20, text: 'CSS3' },
   { weight: 16, text: 'GraphQL' },
   { weight: 30, text: 'HTML5' },
-  { weight: 24, text: 'JSON' },
   { weight: 28, text: 'Bitbucket' },
   { weight: 24, text: 'SCSS' },
-  { weight: 20, text: 'TFS' },
+  { weight: 20, text: 'React' },
+  { weight: 20, text: 'Redux' },
   { weight: 16, text: 'Angular.js' },
   { weight: 20, text: 'SQL' }
 ];
@@ -133,7 +134,10 @@ export const TAG_CANVAS_OPTIONS: TagCanvasOptions = {
   initial: [0.3, -0.1],
   depth: 1.1,
   weight: true,
-  reverse: true
+  reverse: true,
+  radiusX: 2,
+  radiusY: 2,
+  radiusZ: 2
 };
 
 export const NEW_EXPERIENCES: INewExperience[] = [

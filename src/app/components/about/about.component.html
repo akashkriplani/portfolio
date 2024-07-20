@@ -23,7 +23,11 @@
   </div>
   <div class="tag-canvas">
     <div class="canvas-container">
-      <tag-canvas [tags]="tags" [options]="options"></tag-canvas>
+      <ng-tag-canvas [options]="options">
+        <ng-container *ngFor="let tag of tags">
+          <a ngTag [weight]="tag.weight">{{ tag.text }}</a>
+        </ng-container>
+      </ng-tag-canvas>
     </div>
   </div>
 </section>
