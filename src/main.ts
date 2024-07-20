@@ -8,6 +8,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CustomTitleStrategy, APP_ROUTES } from './app/app-routing';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
+import { TagCanvasModule } from 'ng-tagcanvas';
 
 if (environment.production) {
   enableProdMode();
@@ -24,6 +25,7 @@ bootstrapApplication(AppComponent, {
           deps: [HttpClient]
         }
       }),
+      TagCanvasModule.forRoot(),
       BrowserAnimationsModule,
       HttpClientModule
     ),

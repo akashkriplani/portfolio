@@ -8,8 +8,9 @@ import {
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import Blast from 'blast-vanilla';
-import { TagCanvasModule, Tag } from 'ng-tagcanvas';
+import { TagCanvasModule, TagCanvasOptions } from 'ng-tagcanvas';
 import { SocialMediaProfiles, TAGS, TAG_CANVAS_OPTIONS } from '../../constants';
+import { ITag } from '../../interfaces';
 
 @Component({
   selector: 'app-about',
@@ -27,7 +28,7 @@ export class AboutComponent implements AfterViewInit {
     (x) => x.title.toLowerCase().trim() == 'linkedin'
   )[0];
 
-  tags: Tag[] = TAGS;
+  tags: ITag[] = TAGS;
 
   options: TagCanvasOptions = TAG_CANVAS_OPTIONS;
 

@@ -49,3 +49,8 @@ export interface INewExperience {
   title: string;
   description: string;
 }
+
+export interface ITag {
+  weight: number;
+  text: string;
+}
