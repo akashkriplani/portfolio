@@ -34,7 +34,7 @@
   }
 }
 
-::ng-deep ng-tag-canvas canvas {
+:host ::ng-deep ng-tag-canvas canvas {
   padding-top: 20px;
   min-height: 70vh;
 }

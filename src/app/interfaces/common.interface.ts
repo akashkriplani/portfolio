@@ -43,13 +43,6 @@ export interface IExperience {
   role: string;
 }
 
-export interface INewExperience {
-  accentColor: string;
-  date: string;
-  title: string;
-  description: string;
-}
-
 export interface ITag {
   weight: number;
   text: string;

@@ -4,7 +4,6 @@ import {
   ISocialMediaLinks,
   ISkills,
   IExperience,
-  INewExperience,
   ITag
 } from '../interfaces';
 
@@ -144,39 +143,6 @@ export const TAG_CANVAS_OPTIONS: TagCanvasOptions = {
   radiusY: 2,
   radiusZ: 2
 };
-
-export const NEW_EXPERIENCES: INewExperience[] = [
-  {
-    accentColor: '#41516c',
-    date: '2022',
-    title: 'Staff Engineer, Nagarro',
-    description: `Working as a senior front end Angular developer for a South African Bank`
-  },
-  {
-    accentColor: '#fbca3e',
-    date: '2021',
-    title: 'Tech Lead, Fiserv',
-    description: `Worked as an Angular developer on a in-house banking product`
-  },
-  {
-    accentColor: '#e24a68',
-    date: '2019',
-    title: 'Senior Associate L1, Publicis Sapient',
-    description: `Worked as an Angular developer for a US telecommunications client`
-  },
-  {
-    accentColor: '#1b5f8c',
-    date: '2018',
-    title: 'Senior Associate, Nagarro',
-    description: `Worked as an Angular developer for a South African Bank which is responsible for Wealth Management of its rich and wealthy customers`
-  },
-  {
-    accentColor: '#4cadad',
-    date: '2014',
-    title: 'Programmer Analyst, Cognizant',
-    description: `Worked as a UI developer for in-house retailmate solutions team`
-  }
-];
 
 export const EXPERIENCES: IExperience[] = [
   {

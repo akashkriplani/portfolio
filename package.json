@@ -22,8 +22,6 @@
     "@angular/platform-browser": "^17.3.12",
     "@angular/platform-browser-dynamic": "^17.3.12",
     "@angular/router": "^17.3.12",
-    "@ngx-translate/core": "^14.0.0",
-    "@ngx-translate/http-loader": "^7.0.0",
     "blast-vanilla": "^2.1.6",
     "gh-pages": "^6.1.1",
     "ng-tagcanvas": "^1.0.0",
