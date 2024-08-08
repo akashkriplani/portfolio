@@ -20,9 +20,6 @@ bootstrapApplication(AppComponent, {
       BrowserAnimationsModule
     ),
     provideHttpClient(),
-    {
-      provide: TitleStrategy,
-      useClass: CustomTitleStrategy
-    }
+    { provide: TitleStrategy, useClass: CustomTitleStrategy }
   ]
 }).catch((err) => console.error(err));

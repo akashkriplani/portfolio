@@ -14,6 +14,7 @@ import { PostsService } from '../../services/posts.service';
 import { IMediumBlogPostsResponse } from '../../interfaces';
 import { ShortenPipe } from '../../pipes/shorten.pipe';
 import { NodeToTextPipe } from '../../pipes/node-to-text.pipe';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-medium-blog',
@@ -24,7 +25,7 @@ import { NodeToTextPipe } from '../../pipes/node-to-text.pipe';
 })
 export class MediumBlogComponent implements OnInit, AfterViewInit {
   @ViewChild('title') titlePieces!: ElementRef;
-  posts!: IMediumBlogPostsResponse;
+  posts: IMediumBlogPostsResponse = { items: [] };
 
   private postsService = inject(PostsService);
   private renderer = inject(Renderer2);
@@ -41,7 +42,7 @@ export class MediumBlogComponent implements OnInit, AfterViewInit {
         next: (data: IMediumBlogPostsResponse) => {
           this.posts = data;
         },
-        error: () => alert('Failed to fetch data from Medium API')
+        error: ({ error }) => alert(error.message)
       });
   }
 

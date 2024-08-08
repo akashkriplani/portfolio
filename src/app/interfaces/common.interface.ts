@@ -4,9 +4,14 @@ export interface INavMenuItems {
 }
 
 export interface ISkills {
-  techSkills: string[];
-  mgmtSkills: string[];
-  softSkills: string[];
+  techSkills: ISkill[];
+  mgmtSkills: ISkill[];
+  softSkills: ISkill[];
+}
+
+export interface ISkill {
+  id: number;
+  name: string;
 }
 
 export interface ISocialMediaLinks {
@@ -37,6 +42,7 @@ export interface IDynamicScripts {
 }
 
 export interface IExperience {
+  id: number;
   company: string;
   designation: string;
   yearRange: string;

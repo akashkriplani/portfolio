@@ -1,5 +1,4 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { NgIf } from '@angular/common';
 import {
   NavigationCancel,
   NavigationEnd,
@@ -23,7 +22,6 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   imports: [
     FooterComponent,
     RouterOutlet,
-    NgIf,
     NavigationMenuComponent,
     SpinnerComponent
   ]

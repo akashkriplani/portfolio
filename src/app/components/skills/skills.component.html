@@ -4,23 +4,29 @@
 <section class="skills-section">
   <dl class="list tech-skills">
     <dt>Tech Skills</dt>
-    <dd *ngFor="let techSkill of skills.techSkills">
-      <a>{{ techSkill }}</a>
+    @for (techSkill of skills.techSkills; track techSkill.id) {
+    <dd>
+      <a>{{ techSkill.name }}</a>
     </dd>
+    }
   </dl>
 
   <dl class="list mgmt-skills">
     <dt>Management Skills</dt>
-    <dd *ngFor="let mgmtSkill of skills.mgmtSkills">
-      <a>{{ mgmtSkill }}</a>
+    @for (mgmtSkill of skills.mgmtSkills; track mgmtSkill.id) {
+    <dd>
+      <a>{{ mgmtSkill.name }}</a>
     </dd>
+    }
   </dl>
 
   <dl class="list soft-skills">
     <dt>Soft Skills</dt>
-    <dd *ngFor="let softSkill of skills.softSkills">
-      <a>{{ softSkill }}</a>
+    @for (softSkill of skills.softSkills; track softSkill.id) {
+    <dd>
+      <a>{{ softSkill.name }}</a>
     </dd>
+    }
   </dl>
 
   <div class="experience-section" #experience>

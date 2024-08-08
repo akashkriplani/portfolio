@@ -6,7 +6,6 @@ import {
   Renderer2,
   ViewChild
 } from '@angular/core';
-import { NgFor } from '@angular/common';
 import Blast from 'blast-vanilla';
 import { TimelineDirective } from '../../directives/timeline.directive';
 import { EXPERIENCES } from '../../constants';
@@ -15,7 +14,7 @@ import { IExperience } from '../../interfaces';
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [NgFor, TimelineDirective],
+  imports: [TimelineDirective],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })

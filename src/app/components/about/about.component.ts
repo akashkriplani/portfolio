@@ -6,7 +6,6 @@ import {
   Renderer2,
   ViewChild
 } from '@angular/core';
-import { NgFor } from '@angular/common';
 import Blast from 'blast-vanilla';
 import { TagCanvasModule, TagCanvasOptions } from 'ng-tagcanvas';
 import { SocialMediaProfiles, TAGS, TAG_CANVAS_OPTIONS } from '../../constants';
@@ -15,7 +14,7 @@ import { ITag } from '../../interfaces';
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [NgFor, TagCanvasModule],
+  imports: [TagCanvasModule],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })

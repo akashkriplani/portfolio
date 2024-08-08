@@ -24,9 +24,9 @@
   <div class="tag-canvas">
     <div class="canvas-container">
       <ng-tag-canvas [options]="options">
-        <ng-container *ngFor="let tag of tags">
-          <a ngTag [weight]="tag.weight">{{ tag.text }}</a>
-        </ng-container>
+        @for (tag of tags; track tag.text) {
+        <a ngTag [weight]="tag.weight">{{ tag.text }}</a>
+        }
       </ng-tag-canvas>
     </div>
   </div>

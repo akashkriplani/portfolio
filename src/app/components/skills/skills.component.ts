@@ -7,7 +7,6 @@ import {
   ViewChild,
   inject
 } from '@angular/core';
-import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import Blast from 'blast-vanilla';
 import { ISkills } from '../../interfaces';
@@ -16,7 +15,7 @@ import { SKILLS } from '../../constants';
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [NgFor, RouterLink],
+  imports: [RouterLink],
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })

@@ -2,6 +2,7 @@ import {
   Directive,
   ElementRef,
   HostListener,
+  inject,
   Input,
   Renderer2
 } from '@angular/core';
@@ -13,7 +14,8 @@ import {
 export class ToggleNavMenuDirective {
   @Input('customClassName') className!: string;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
+  private elementRef = inject(ElementRef);
+  private renderer = inject(Renderer2);
 
   @HostListener('click') onClick() {
     if (this.elementRef.nativeElement.classList.contains(this.className)) {

@@ -46,11 +46,13 @@
     </p>
     <div class="footer-content">
       <ul>
-        <li *ngFor="let link of links; let i = index">
+        @for (link of links; track link.profileUrl) {
+        <li>
           <a [href]="link.profileUrl" target="_blank" [attr.title]="link.title">
             <img class="zoom" [src]="link.iconPath" [alt]="link.title" />
           </a>
         </li>
+        }
       </ul>
     </div>
   </div>

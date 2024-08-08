@@ -3,7 +3,8 @@
     <h1 #title>Work History</h1>
   </header>
   <ul>
-    <li *ngFor="let e of experience" appTimeline customClassName="in-view">
+    @for (e of experience; track e.id) {
+    <li appTimeline customClassName="in-view">
       <div>
         <time>{{ e.yearRange }}</time>
         <div class="discovery">
@@ -13,5 +14,6 @@
         </div>
       </div>
     </li>
+    }
   </ul>
 </section>

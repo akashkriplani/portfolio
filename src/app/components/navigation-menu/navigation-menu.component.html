@@ -2,7 +2,8 @@
   <span class="cls"></span>
   <span>
     <ul class="sub-menu">
-      <li *ngFor="let navItems of navMenuItems">
+      @for (navItems of navMenuItems; track navItems.link) {
+      <li>
         <a
           [routerLink]="navItems.link"
           [attr.title]="navItems.title"
@@ -11,6 +12,7 @@
           >{{ navItems.title }}</a
         >
       </li>
+      }
     </ul>
   </span>
   <span class="cls"></span>

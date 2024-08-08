@@ -1,12 +1,15 @@
 <div class="header">
   <app-navigation-menu />
+
   <main>
     <div class="inner-header">
-      <app-spinner *ngIf="loading; else showContentTemplate" />
-      <ng-template #showContentTemplate>
-        <router-outlet />
-      </ng-template>
+      @if (loading) {
+      <app-spinner />
+      } @else {
+      <router-outlet />
+      }
     </div>
   </main>
+
   <app-footer />
 </div>

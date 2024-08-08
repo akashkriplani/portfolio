@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'nodeToText',
-  standalone: true,
+  standalone: true
 })
 export class NodeToTextPipe implements PipeTransform {
   transform(node: any): string {

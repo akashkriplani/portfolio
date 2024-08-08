@@ -30,37 +30,37 @@ export const NavMenuItems: INavMenuItems[] = [
 
 export const SKILLS: ISkills = {
   techSkills: [
-    'HTML',
-    'CSS / SCSS',
-    'JavaScript',
-    'TypeScript',
-    'Angular',
-    'React',
-    'NgRx',
-    'GraphQL',
-    'Git / Bitbucket'
+    { id: 1, name: 'HTML' },
+    { id: 2, name: 'CSS / SCSS' },
+    { id: 3, name: 'JavaScript' },
+    { id: 4, name: 'TypeScript' },
+    { id: 5, name: 'Angular' },
+    { id: 6, name: 'React' },
+    { id: 7, name: 'NgRx' },
+    { id: 8, name: 'GraphQL' },
+    { id: 9, name: 'Git / Bitbucket' }
   ],
   mgmtSkills: [
-    'Understanding UX',
-    'Strategic Planning',
-    'Developing front-end architecture',
-    'Innovative Approach',
-    'Code Reviewing',
-    'Critical Thinking',
-    'Mentoring',
-    'Teamwork and Delegation',
-    'Coordinating'
+    { id: 1, name: 'Understanding UX' },
+    { id: 2, name: 'Strategic Planning' },
+    { id: 3, name: 'Developing front-end architecture' },
+    { id: 4, name: 'Innovative Approach' },
+    { id: 5, name: 'Code Reviewing' },
+    { id: 6, name: 'Critical Thinking' },
+    { id: 7, name: 'Mentoring' },
+    { id: 8, name: 'Teamwork and Delegation' },
+    { id: 9, name: 'Coordinating' }
   ],
   softSkills: [
-    'Leadership',
-    'Teamwork',
-    'Work Ethic',
-    'Problem Solving',
-    'Public Speaking',
-    'Professional Writing',
-    'Punctuality',
-    'Digital Literacy',
-    'Intercultural Fluency'
+    { id: 1, name: 'Leadership' },
+    { id: 2, name: 'Teamwork' },
+    { id: 3, name: 'Work Ethic' },
+    { id: 4, name: 'Problem Solving' },
+    { id: 5, name: 'Public Speaking' },
+    { id: 6, name: 'Professional Writing' },
+    { id: 7, name: 'Punctuality' },
+    { id: 8, name: 'Digital Literacy' },
+    { id: 9, name: 'Intercultural Fluency' }
   ]
 };
 
@@ -146,30 +146,35 @@ export const TAG_CANVAS_OPTIONS: TagCanvasOptions = {
 
 export const EXPERIENCES: IExperience[] = [
   {
+    id: 1,
     company: 'Nagarro',
     designation: 'Staff Engineer',
     yearRange: '2022 - Present',
     role: 'Working as a senior front end Angular developer'
   },
   {
+    id: 2,
     company: 'Fiserv',
     designation: 'Tech Lead',
     yearRange: '2021 - 2022',
     role: 'Worked as a senior front end Angular developer'
   },
   {
+    id: 3,
     company: 'Publicis Sapient',
     designation: 'Senior Associate L1',
     yearRange: '2019 - 2021',
     role: 'Worked as a senior front end Angular developer'
   },
   {
+    id: 4,
     company: 'Nagarro',
     designation: 'Senior Associate',
     yearRange: '2018 - 2019',
     role: 'Worked as a front end Angular developer'
   },
   {
+    id: 5,
     company: 'Cognizant',
     designation: 'Programmer Analyst',
     yearRange: '2014 - 2017',
