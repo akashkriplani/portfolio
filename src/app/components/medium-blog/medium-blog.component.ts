@@ -37,8 +37,11 @@ export class MediumBlogComponent implements OnInit, AfterViewInit {
     this.postsService
       .getPosts()
       .pipe(take(1))
-      .subscribe((data: IMediumBlogPostsResponse) => {
-        this.posts = data;
+      .subscribe({
+        next: (data: IMediumBlogPostsResponse) => {
+          this.posts = data;
+        },
+        error: () => alert('Failed to fetch data from Medium API')
       });
   }
 
