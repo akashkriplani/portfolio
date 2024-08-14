@@ -1,4 +1,10 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  inject,
+  OnDestroy,
+  OnInit
+} from '@angular/core';
 import { AnimateComponent } from '../animate/animate.component';
 import { DynamicScriptService } from '../../services/dynamic-script.service';
 
@@ -13,9 +19,22 @@ export class HomeComponent
   implements OnInit, OnDestroy
 {
   override animationDelay: number = 3300;
+  screenHeight!: number;
   screenWidth!: number;
 
   private dsService = inject(DynamicScriptService);
+
+  constructor() {
+    super();
+    this.getScreenSize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  getScreenSize() {
+    this.screenHeight = window.innerHeight;
+    this.screenWidth = window.innerWidth;
+    console.log(this.screenHeight, this.screenWidth);
+  }
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;

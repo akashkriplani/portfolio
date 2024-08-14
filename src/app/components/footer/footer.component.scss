@@ -100,23 +100,18 @@ ul li:not(:first-child) {
   0% {
     transform: translate3d(-90px, 0, 0);
   }
+
   100% {
     transform: translate3d(85px, 0, 0);
   }
 }
 
-/*Shrinking for mobile*/
-@media (max-width: 768px) {
-  .waves {
-    height: 40px;
-    min-height: 40px;
+@media screen and (max-width: 767px) {
+  p {
+    font-size: 10px;
   }
 
   .content {
     height: 8vh;
-  }
-
-  h1 {
-    font-size: 1.5rem;
   }
 }
