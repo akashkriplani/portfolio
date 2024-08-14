@@ -182,6 +182,12 @@
 }
 
 @media screen and (max-width: 48rem) {
+  .medium-blog {
+    h1 {
+      font-size: 2.5rem;
+    }
+    padding: 4rem 0;
+  }
   .col {
     width: calc(50% - 2rem);
   }
