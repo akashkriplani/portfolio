@@ -93,3 +93,28 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 767px) {
+  .spinner {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tl,
+  .tr,
+  .br,
+  .bl {
+    width: 15px;
+    height: 15px;
+  }
+
+  .tr,
+  .br {
+    left: 15px;
+  }
+
+  .br,
+  .bl {
+    top: 15px;
+  }
+}

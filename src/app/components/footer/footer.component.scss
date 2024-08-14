@@ -106,6 +106,12 @@ ul li:not(:first-child) {
   }
 }
 
+@media screen and (max-width: 1023px) and (orientation: landscape) {
+  .content {
+    height: 13vh;
+  }
+}
+
 @media screen and (max-width: 767px) {
   p {
     font-size: 10px;
