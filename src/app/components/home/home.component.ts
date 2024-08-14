@@ -33,7 +33,6 @@ export class HomeComponent
   getScreenSize() {
     this.screenHeight = window.innerHeight;
     this.screenWidth = window.innerWidth;
-    console.log(this.screenHeight, this.screenWidth);
   }
 
   ngOnInit(): void {
