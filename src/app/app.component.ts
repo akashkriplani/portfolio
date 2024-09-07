@@ -13,6 +13,7 @@ import { FontService } from './services/font.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ToggleButtonComponent } from './components/toggle-button/toggle-button.component';
 
 @Component({
   selector: 'app-root',
@@ -21,12 +22,14 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   standalone: true,
   imports: [
     FooterComponent,
-    RouterOutlet,
     NavigationMenuComponent,
-    SpinnerComponent
+    RouterOutlet,
+    SpinnerComponent,
+    ToggleButtonComponent
   ]
 })
 export class AppComponent implements OnInit {
+  chatModeOn = false;
   loading = true;
 
   private dsService = inject(DynamicScriptService);
@@ -56,8 +59,9 @@ export class AppComponent implements OnInit {
       this.loading = true;
     }
     if (event instanceof NavigationEnd) {
+      this.chatModeOn = event.url === '/chatbot';
+
       setTimeout(() => {
-        // here
         this.loading = false;
       }, 2000);
     }
@@ -65,15 +69,21 @@ export class AppComponent implements OnInit {
     // Set loading state to false in both of the below events to hide the spinner in case a request fails
     if (event instanceof NavigationCancel) {
       setTimeout(() => {
-        // here
         this.loading = false;
       }, 2000);
     }
     if (event instanceof NavigationError) {
       setTimeout(() => {
-        // here
         this.loading = false;
       }, 2000);
     }
   }
+
+  toggleAIMode = (chatModeOn: boolean) => {
+    this.chatModeOn = chatModeOn;
+
+    this.chatModeOn
+      ? this.router.navigate(['/chatbot'])
+      : this.router.navigate(['']);
+  };
 }
